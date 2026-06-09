@@ -1,4 +1,4 @@
-# Cooperative Agent Simulation via Contribution-Aware Reward Engineering
+# Cooperative Agent Simulation
 
 **Designing Cooperation-Aware Reward Functions for Multi-Agent Reinforcement Learning in a Physics-Based Simulation**
 
