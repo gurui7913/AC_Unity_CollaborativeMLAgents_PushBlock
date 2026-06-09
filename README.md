@@ -1,4 +1,4 @@
-# Exploring Multi-Agent Based Human & AI Collaboration
+# Cooperative Agent Simulation via Contribution-Aware Reward Engineering
 
 **Designing Cooperation-Aware Reward Functions for Multi-Agent Reinforcement Learning in a Physics-Based Simulation**
 
