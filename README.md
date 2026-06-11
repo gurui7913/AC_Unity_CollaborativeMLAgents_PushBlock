@@ -5,6 +5,8 @@
 > UCL Bartlett School of Architecture · Architectural Computation – Digital Studio 1: Simulated Realities  
 > Team: Du Hao, **Gu Rui**, Lu Haiyu, Pan Lingfeng · March 2025
 
+> **My contribution:** Reward function design · BlockContributionTracker system · Training iteration & analysis
+
 ---
 
 ## Table of Contents
@@ -21,8 +23,6 @@
   - [Stage 3 — Training & Iteration](#stage-3--training--iteration)
   - [Stage 4 — Analysis](#stage-4--analysis)
 - [Results](#results)
-  - [Quantitative Findings](#quantitative-findings)
-  - [Emergent Behaviors](#emergent-behaviors)
 - [Project Structure](#project-structure)
 - [How to Run](#how-to-run)
 - [Future Work](#future-work)
@@ -36,7 +36,7 @@ In multi-agent reinforcement learning (MARL), agents trained with standard rewar
 
 > **Can a collaboration-aware reward function, combined with a real-time agent contribution tracking mechanism, induce emergent cooperative behavior among decentralized agents in a physics-based simulation?**
 
-We operationalize this question through a **Collaborative Push Block** task in Unity ML-Agents, where three autonomous agents must push blocks of varying masses into a goal zone. Heavier blocks physically require multiple agents to move — but the default flat reward provides no signal distinguishing solo from cooperative actions. We hypothesize that a **piecewise reward function that validates agent-count matching per block type** will produce measurably higher collaboration rates and faster convergence compared to the baseline.
+We operationalize this through a **Collaborative Push Block** task in Unity ML-Agents, where three agents must push blocks of varying masses into a goal zone. Heavier blocks physically require multiple agents to move — but the default flat reward provides no signal distinguishing solo from cooperative actions. We hypothesize that a **piecewise reward function validating agent-count matching per block type** will produce measurably higher collaboration rates and faster convergence compared to the baseline.
 
 ---
 
@@ -46,9 +46,9 @@ We operationalize this question through a **Collaborative Push Block** task in U
 
 We evaluated three platforms for multi-agent simulation research:
 
-| Platform | Extensible Envs | Real-time Interaction | Multiplayer | Physiological Data | Difficulty |
+| Platform | Extensible Envs | Real-time Interaction | Multiplayer | Open-sourced | Difficulty |
 |----------|:---:|:---:|:---:|:---:|:---:|
-| Overcooked | ✗ | ✓ | 1+1 | ✗ | Medium |
+| Overcooked | ✗ | ✓ | 1+1 | ✓ | Medium |
 | CREW | ✓ | ✓ | No Limit | ✓ | Difficult |
 | **ML-Agents** | **✓** | **✓** | **No Limit** | **✓** | **Easy** |
 
@@ -56,7 +56,7 @@ We chose **Unity ML-Agents** for its tight integration with Unity's physics engi
 
 ### Environment Architecture
 
-The simulation is built on a **Centralized Training with Decentralized Execution (CTDE)** paradigm via MA-POCA:
+The simulation uses a **Centralized Training with Decentralized Execution (CTDE)** paradigm via MA-POCA:
 
 ```
 ┌─────────────────────────┐          ┌─────────────────────────────────┐
@@ -77,15 +77,35 @@ The simulation is built on a **Centralized Training with Decentralized Execution
 └─────────────────────────┘          └─────────────────────────────────┘
 ```
 
+**Why MA-POCA over plain PPO or COMA:**
+
+The task has three structural properties that make standard decentralized approaches insufficient:
+
+- **Group-level reward** — agents share a single reward signal; individual critics cannot correctly attribute which agent caused the reward
+- **Physically enforced cooperation** — Block3 cannot move unless all three agents push simultaneously; this requires the critic to evaluate joint states, not individual states
+- **Dynamic contribution** — an agent may contribute to Block3 early in an episode then move away; its contribution must be credited posthumously
+
+MA-POCA's **Centralized Critic** observes all agents' states simultaneously, solving the credit assignment problem that causes non-stationarity in fully decentralized critics. Its **Posthumous Credit Assignment** mechanism specifically handles the case where an agent's contribution to a group outcome precedes the reward signal — directly matching our task structure.
+
 ### Agent Design
 
-Each agent is an autonomous entity with **no inter-agent communication channel** — cooperation must emerge purely from shared reward signals and environmental observations.
+Each agent has **no inter-agent communication channel** — cooperation must emerge purely from shared reward signals and environmental observations.
 
-- **Observation Space:** Grid-based CNN perception. Each agent observes a local 2D grid where every cell is encoded as a one-hot vector over 6 detectable tags (Nothing, Wall, Agent, Goal, BlockSmall, BlockLarge, BlockVeryLarge). The observation tensor has shape `GridSize.x × GridSize.z × NumDetectableTags`, processed by a convolutional encoder before feeding into the policy network.
+- **Observation Space:** Grid-based CNN perception. Each agent observes a local 2D grid encoded as a one-hot tensor over 6 detectable tags. Shape: `GridSize.x × GridSize.z × NumDetectableTags`.
 
-- **Action Space:** 7 discrete actions — `0: idle`, `1: forward`, `2: backward`, `3: rotate CW`, `4: rotate CCW`, `5: strafe left`, `6: strafe right`. Movement is physics-based (`Rigidbody.AddForce` with `VelocityChange` mode), meaning agents interact with blocks through realistic contact forces.
+  | Tag | One-Hot | Object |
+  |:---:|:---:|:---|
+  | N | `[0,0,0,0,0,0]` | Nothing |
+  | 0 | `[1,0,0,0,0,0]` | Wall |
+  | 1 | `[0,1,0,0,0,0]` | Agent |
+  | 2 | `[0,0,1,0,0,0]` | Goal |
+  | 3 | `[0,0,0,1,0,0]` | BlockSmall |
+  | 4 | `[0,0,0,0,1,0]` | BlockLarge |
+  | 5 | `[0,0,0,0,0,1]` | BlockVeryLarge |
 
-- **Agent Constraints:** Equal strength, equal max speed, push-only (no lifting/grasping), facing-direction movement. These constraints ensure that moving a heavy block is physically impossible without multiple agents applying force from compatible directions.
+- **Action Space:** 7 discrete actions — `0: idle`, `1: forward`, `2: backward`, `3: rotate CW`, `4: rotate CCW`, `5: strafe left`, `6: strafe right`. Movement is physics-based (`Rigidbody.AddForce`, `VelocityChange` mode).
+
+- **Constraints:** Equal strength, equal max speed, push-only, facing-direction movement. These constraints make moving a heavy block physically impossible without multiple agents applying force from compatible angles.
 
 ### Block & Task Design
 
@@ -96,20 +116,13 @@ Each agent is an autonomous entity with **no inter-agent communication channel**
 | Very Large (3) | 90–150 | 3 | `BlockVeryLarge` |
 
 **Episode Logic:**
-- All agents and blocks spawn at random non-overlapping positions each episode
-- Episode terminates when all blocks enter the goal zone, or `MaxEnvironmentSteps` is reached
-- The platform rotates randomly at reset to prevent agents from memorizing spatial shortcuts
-
-**Cooperation Challenges Observed in Simulation:**
-- **Incorrect directions** — agents push blocks away from the goal when acting independently
-- **Deadlock** — poor coordination causes blocks to jam against walls or each other
-- **Redundant effort** — all three agents cluster on the small block while heavy blocks remain stationary
+- All agents and blocks spawn at random non-overlapping positions outside the goal zone
+- Episode terminates when all blocks enter the goal, or `MaxEnvironmentSteps` is reached
+- Platform rotates randomly at reset to prevent agents memorizing spatial shortcuts
 
 ---
 
 ## Workflow
-
-The project follows a four-stage pipeline from environment design through iterative reward engineering:
 
 ```
 Stage 1              Stage 2                Stage 3              Stage 4
@@ -125,17 +138,15 @@ Construction         Design                 Iteration            Optimization
 
 ### Stage 1 — Environment Construction
 
-Built the full simulation pipeline in Unity: scene geometry, physics materials, agent `Rigidbody` configuration, `GridSensor` setup for CNN-based observations, `GoalDetectTrigger` with `UnityEvent` callbacks, and the `PushBlockEnvController` that manages episode lifecycle (spawn, reset, scoring). Each block carries a `BlockTypeIdentifier` component that maps to the reward structure.
+Built the full simulation pipeline in Unity: scene geometry, physics materials, agent `Rigidbody` configuration, `GridSensor` setup, `GoalDetectTrigger` with `UnityEvent` callbacks, and `PushBlockEnvController` managing episode lifecycle. Each block carries a `BlockTypeIdentifier` component mapping to the reward structure.
 
 ### Stage 2 — Reward Function Design (My Core Contribution)
 
 #### The Baseline Problem
 
-The default PushBlockCollab awards a flat `+1` group reward per block scored. Under this scheme, agents converge on a **selfish equilibrium**: each agent independently pushes the nearest small block, ignoring heavier blocks that require cooperation. The reward signal cannot distinguish "one agent pushed a small block" from "three agents cooperated on a heavy block."
+The default PushBlockCollab awards a flat `+1` group reward per block scored. Under this scheme, agents converge on a **selfish equilibrium**: each independently pushes the nearest small block, ignoring heavier blocks requiring cooperation. The reward signal cannot distinguish "one agent pushed a small block" from "three agents cooperated on a heavy block."
 
 #### Collaboration-Aware Reward: Piecewise Formulation
-
-I designed a reward function with two components:
 
 **Component 1 — Collaboration Reward** $R_{\text{collab}}$:
 
@@ -143,34 +154,28 @@ $$R_{\text{collab}} = \begin{cases} -2.0, & A_{\text{active}} = 0 \\ R_{\max}, &
 
 | Symbol | Meaning |
 |:---:|:---|
-| $A_{\text{active}}$ | Number of agents actually contributing to pushing the block |
+| $A_{\text{active}}$ | Agents actually contributing to pushing the block |
 | $A_{\text{required}}$ | Minimum agents needed (1 / 2 / 3 by block type) |
-| $R_{\max}$ | Maximum reward for successful collaboration |
+| $R_{\max}$ | Maximum reward for exact-match collaboration |
 
 **Component 2 — Time Penalty** $R_{\text{time}}$:
 
 $$R_{\text{time}} = -\frac{0.05}{\text{MaxEnvironmentSteps}}$$
 
-**Total Reward:**
-
-$$R_{\text{total}} = R_{\text{collab}} + R_{\text{time}}$$
+**Total:** $R_{\text{total}} = R_{\text{collab}} + R_{\text{time}}$
 
 #### Agent Contribution Tracking System
 
-The reward function depends on knowing **how many agents actually pushed a given block** at the moment it enters the goal — a non-trivial problem in a physics simulation where forces are continuous and indirect.
+The reward function requires knowing **which agents actually pushed a block** at scoring — non-trivial in a physics simulation where forces are continuous and indirect.
 
-I implemented `BlockContributionTracker`, a per-block component that:
+`BlockContributionTracker` (per-block C# component):
 
-1. **Records collision-based contributions** — when an agent collides with a block, the impact force is logged with the agent's ID and a timestamp. Initial contact receives higher weight (1.2×) than sustained contact (0.4×).
-
-2. **Maintains a time-windowed active set** — only agents who contributed within `activeTimeWindow` seconds are counted as active collaborators. This prevents agents who touched a block 30 seconds ago from receiving credit.
-
-3. **Applies exponential decay** — contribution values decay each `FixedUpdate()` by a factor of `indirectContactDecay` (0.98), naturally aging out stale contributions.
-
-4. **Handles indirect force propagation** — when Agent A pushes Agent B into a block, Agent A's force is propagated to the block's contribution tracker via `Physics.OverlapSphere`, with a distance-based attenuation.
+1. **Collision-based logging** — records impact force per agent ID with timestamp; initial contact weighted 1.2×, sustained contact 0.4×
+2. **Time-windowed active set** — only agents contributing within `activeTimeWindow` seconds count as active collaborators
+3. **Exponential decay** — contribution values decay by `indirectContactDecay` (0.98) each `FixedUpdate()`, naturally aging out stale contributions
+4. **Indirect force propagation** — when Agent A pushes Agent B into a block, A's force propagates via `Physics.OverlapSphere` with distance attenuation
 
 ```csharp
-// Simplified core logic
 public void AddAgentContribution(int agentId, float contributionValue)
 {
     agentContributions[agentId] += contributionValue;
@@ -187,35 +192,35 @@ public int GetActiveAgentCount()
 
 #### Refined Version: Continuous Reward Function
 
-The piecewise formulation creates **hard thresholds** — a near-miss (2 of 3 agents) receives the same penalty as a complete miss (0 of 3). This produces noisy gradients during training. I refined this to a continuous formulation:
+The piecewise formulation creates **hard thresholds** — a near-miss (2 of 3 agents) receives the same penalty as a complete miss (0 of 3), producing noisy gradients. Refined to a continuous formulation:
 
 $$R_{\text{collab}} = \frac{R_{\max} + (1 - 0.5 \times |A_{\text{required}} - A_{\text{active}}|)}{2}$$
 
-This provides proportional reward scaling, giving the policy smoother gradient signals for learning cooperative coordination.
+Rewards now scale linearly with distance from the target agent count, providing smoother gradient signals for cooperative coordination.
 
 ### Stage 3 — Training & Iteration
 
 **Algorithm:** MA-POCA with attention-based centralized critic and decentralized actors.
 
-**Key iteration variable — block mass ratios.** The physical difficulty of pushing a block is governed by its `Rigidbody.mass`. If mass is too high, agents cannot discover cooperation within the training budget; too low, and single agents can move all blocks, removing the need for collaboration.
+**Key iteration variable — block mass ratios.** If mass is too high, agents cannot discover cooperation within the training budget; too low, single agents can move all blocks, eliminating the need for collaboration.
 
-| Version | Block1 | Block2 | Block3 | Convergence Window |
-|:---:|:---:|:---:|:---:|:---:|
-| Original | 100 | 300 | 600 | Did not converge |
-| Optimized 1 | 10 | 200 | 300 | ~6–10M steps |
-| Optimized 2 | 10 | 100 | 150 | ~6–10M steps |
-| **Optimized 3** | **10** | **40** | **90** | **~2–7M steps** |
-| **Optimized 4** | **10** | **60** | **100** | **~2–7M steps** |
+| Version | Block1 | Block2 | Block3 | Reward Formula | Convergence |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| Original | 100 | 300 | 600 | Flat +1 | Did not converge |
+| Optimized 1 | 10 | 200 | 300 | Piecewise | ~6–10M steps |
+| Optimized 2 | 10 | 100 | 150 | Piecewise | ~6–10M steps |
+| **Optimized 3** | **10** | **40** | **90** | **Continuous** | **~2–7M steps** |
+| **Optimized 4** | **10** | **60** | **100** | **Continuous** | **~2–7M steps** |
 
-The final configurations (Optimized 3 & 4) also used the **continuous reward function** and a step-based contribution window (`contributionStepWindow = 20`) instead of the time-based tracker, with an angle threshold (`contributionAngleThreshold = 30°`) to filter agents pushing in non-goal-directed directions.
+Optimized 3 & 4 additionally use a **step-based contribution window** (`contributionStepWindow = 20`) with an **angle threshold** (`contributionAngleThreshold = 30°`) to filter agents pushing in non-goal-directed directions.
 
 ### Stage 4 — Analysis
 
-We track three metrics across training:
+Three metrics tracked across training:
 
-- **Group Cumulative Reward** — measures overall task success and collaboration quality
-- **Policy Entropy** — measures exploration vs. exploitation balance; decreasing entropy indicates strategy convergence
-- **Dynamic Cooperation Efficiency** — the running ratio of scoring events where `Used == Required` agents, computed post-hoc:
+- **Group Cumulative Reward** — overall task success and collaboration quality
+- **Policy Entropy** — exploration/exploitation balance; decreasing entropy signals strategy convergence
+- **Dynamic Cooperation Efficiency** — running ratio of scoring events where `Used == Required` agents:
 
 ```python
 df['Efficient'] = df['Used'] == df['Required']
@@ -226,39 +231,33 @@ df['DynamicEfficiency'] = df['Efficient'].cumsum() / range(1, len(df) + 1)
 
 ## Results
 
-### Quantitative Findings
+### Quantitative
 
 | Metric | Default Reward | Customized (Opt 3&4) |
 |--------|:---:|:---:|
 | Peak Group Cumulative Reward | ~1–2 | **~11** |
 | Convergence Steps | >15M (unstable) | **2–7M** |
-| Policy Entropy (converged) | ~1.8 (high randomness) | **~0.4** (stable strategies) |
-| Cooperation Efficiency | Not tracked (no mechanism) | Measurable, improving |
+| Policy Entropy (converged) | ~1.8 | **~0.4** |
+| Cooperation Efficiency | — | Measurable, improving |
 
 ### Emergent Behaviors
 
-Under the customized reward, agents developed qualitatively different strategies:
-
-| Behavior | Default Reward | Customized Reward |
-|----------|:-:|:-:|
-| Agents push blocks independently | ✓ Common | Reduced |
+| Behavior | Default | Customized |
+|----------|:---:|:---:|
+| Agents push independently | Common | Reduced |
 | Multiple agents converge on heavy blocks | Rare | **Frequent** |
 | Blocks deadlocked against walls | Common | Less common |
 | All blocks cleared within episode | Inconsistent | **Consistent** |
-| Agents "wait" for teammates near heavy blocks | Never | **Observed** |
+| Agents position on same side of heavy block | Never | **Observed** |
 
-The most notable emergent behavior: agents trained with the customized reward learned to **position themselves on the same side of a heavy block** and push in a coordinated direction — a strategy that was never explicitly programmed but emerged from the reward signal alone.
-
-### Key Insight: Reward Function as Behavioral Shaping Tool
-
-The experiment demonstrates that in physics-based multi-agent simulation, **the reward function acts as the primary lever for shaping emergent collective behavior**. The agents' neural network architecture (MA-POCA) and observation space remained constant across all experiments — only the reward structure and physical parameters changed, yet this produced fundamentally different collaborative dynamics.
+The most notable emergent behavior: agents trained with the customized reward learned to **position on the same side of a heavy block and push in a coordinated direction** — never explicitly programmed, emerging from reward structure alone.
 
 ---
 
 ## Project Structure
 
 ```
-├── Code_Optimized 1 & 2/                # Piecewise reward + contribution tracker
+├── Code_Optimized 1 & 2/                # Piecewise reward + time-based contribution tracker
 │   ├── BlockContributionTracker.cs       #   Per-block agent contribution tracking
 │   ├── BlockTypeIdentifier.cs            #   Block weight class enum
 │   ├── GoalDetect.cs                     #   Collision-based goal detection
@@ -271,7 +270,7 @@ The experiment demonstrates that in physics-based multi-agent simulation, **the 
 ├── Code_Optimized 3 & 4/                # Continuous reward + step-based tracking
 │   ├── GoalDetectTrigger.cs              #   Simplified trigger detection
 │   ├── PushAgentCollab.cs                #   Streamlined agent script
-│   ├── PushBlockEnvController.cs         #   Env controller with flexible reward
+│   ├── PushBlockEnvController.cs         #   Env controller with continuous reward
 │   └── PushBlockSettings.cs              #   Simplified settings
 │
 ├── Code_ Cooperation Efficiency/
@@ -288,30 +287,68 @@ The experiment demonstrates that in physics-based multi-agent simulation, **the 
 ### Prerequisites
 
 - Unity 2021.3+ with [ML-Agents Toolkit](https://github.com/Unity-Technologies/ml-agents) (Release 20+)
-- Python 3.8+ with `mlagents` package installed
+- Python 3.8+ with `mlagents` package
 
 ### Setup
 
 1. Clone this repository and open the Unity project
-2. Configure your scene with the following component attachments:
+2. Attach components in your scene:
    - `PushAgentCollab` → each agent GameObject
-   - `BlockTypeIdentifier` → each block (set `.blockType` to Small/Large/VeryLarge)
-   - `BlockContributionTracker` → each block (for Optimized 1&2 version)
-   - `GoalDetectTrigger` → each block (tag to detect = `"goal"`)
+   - `BlockTypeIdentifier` → each block (set `.blockType` to Small / Large / VeryLarge)
+   - `BlockContributionTracker` → each block (Optimized 1&2 only)
+   - `GoalDetectTrigger` → each block (tag = `"goal"`)
    - `PushBlockEnvController` → environment root (assign agent & block lists in Inspector)
-3. Configure your MA-POCA training YAML
+
+3. Create a training config `config/poca_pushblock.yaml`:
+
+```yaml
+behaviors:
+  PushAgentCollab:
+    trainer_type: poca
+    hyperparameters:
+      batch_size: 1024
+      buffer_size: 10240
+      learning_rate: 3.0e-4
+      beta: 5.0e-3
+      epsilon: 0.2
+      lambd: 0.99
+      num_epoch: 3
+    network_settings:
+      normalize: false
+      hidden_units: 256
+      num_layers: 2
+      memory:
+        memory_size: 256
+        sequence_length: 64
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+    max_steps: 15000000
+    time_horizon: 128
+    summary_freq: 10000
+    team_change: 100000
+```
+
 4. Start training:
-   ```bash
-   mlagents-learn config/poca_pushblock.yaml --run-id=collab_v1
-   ```
+
+```bash
+mlagents-learn config/poca_pushblock.yaml --run-id=collab_v1
+```
+
+5. Monitor training in TensorBoard:
+
+```bash
+tensorboard --logdir results/collab_v1
+```
 
 ---
 
 ## Future Work
 
-- **Human-in-the-loop training** — integrate real-time human feedback (audio, discrete/continuous scalar) into the reward signal, enabling Human-Guided ML as shown in our system diagram
-- **Physiological sensing** — incorporate gaze & pupil tracking, EEG, and ECG data to study human cognitive load during human-agent teaming
-- **Scalable environments** — extend to dynamic agent creation/termination scenarios, leveraging MA-POCA's native support for variable team sizes
+- **Human-in-the-loop training** — integrate real-time human feedback (audio, discrete/continuous scalar signals) into the reward pipeline, enabling Human-Guided ML
+- **Physiological sensing integration** — connect gaze tracking, EEG, and ECG data streams via ML-Agents Side Channel to study human cognitive load during human-agent teaming
+- **Variable team sizes** — extend to dynamic agent creation/termination scenarios, leveraging MA-POCA's native support for variable-size groups
 
 ---
 
@@ -327,4 +364,4 @@ The experiment demonstrates that in physics-based multi-agent simulation, **the 
 
 ## License
 
-This project was developed as part of the UCL Bartlett Architectural Computation MSc program.
+Developed as part of the UCL Bartlett Architectural Computation MSc program.
