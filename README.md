@@ -303,31 +303,30 @@ The most notable emergent behavior: agents trained with the customized reward le
 
 ```yaml
 behaviors:
-  PushAgentCollab:
+  PushBlockCollab:
     trainer_type: poca
     hyperparameters:
       batch_size: 1024
       buffer_size: 10240
-      learning_rate: 3.0e-4
-      beta: 5.0e-3
+      learning_rate: 0.0003
+      beta: 0.01
       epsilon: 0.2
-      lambd: 0.99
+      lambd: 0.95
       num_epoch: 3
+      learning_rate_schedule: constant
     network_settings:
       normalize: false
       hidden_units: 256
       num_layers: 2
-      memory:
-        memory_size: 256
-        sequence_length: 64
+      vis_encode_type: simple
     reward_signals:
       extrinsic:
         gamma: 0.99
         strength: 1.0
+    keep_checkpoints: 5
     max_steps: 15000000
-    time_horizon: 128
-    summary_freq: 10000
-    team_change: 100000
+    time_horizon: 64
+    summary_freq: 60000
 ```
 
 4. Start training:
