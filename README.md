@@ -60,20 +60,20 @@ The simulation uses a **Centralized Training with Decentralized Execution (CTDE)
 
 ```
 ┌─────────────────────────┐          ┌─────────────────────────────────┐
-│  MA-POCA Training       │          │  Environment in Unity            │
-│  (Python API)           │          │  (C# Scripts + Physics Engine)   │
-│                         │          │                                  │
-│  Policy Network         │◄─Train──►│  Agent1 ─► Observations          │
-│   Input: grid obs,      │  /Learn  │            (GridSensor)          │
-│   state, reward         │          │          ─► Actions              │
-│   Output: action (ONNX) │          │            (discrete 7-dim)      │
-│                         │          │          ─► Actor                │
-│  Centralized Critic     │          │            (ONNX model)          │
-│  Decentralized Actor    │          │                                  │
-│  PPO with Clipping      │          │  Agent2, Agent3 ... AgentN       │
-│  Attention Mechanism    │          │                                  │
-│  Experience Replay      │          │  Env Parameters:                 │
-│                         │          │   blocks, goal, walls, physics   │
+│  MA-POCA Training       │          │  Environment in Unity           │
+│  (Python API)           │          │  (C# Scripts + Physics Engine)  │
+│                         │          │                                 │
+│  Policy Network         │◄─Train──►│  Agent1 ─► Observations         │
+│   Input: grid obs,      │  /Learn  │            (GridSensor)         │
+│   state, reward         │          │          ─► Actions             │
+│   Output: action (ONNX) │          │            (discrete 7-dim)     │
+│                         │          │          ─► Actor               │
+│  Centralized Critic     │          │            (ONNX model)         │
+│  Decentralized Actor    │          │                                 │
+│  PPO with Clipping      │          │  Agent2, Agent3 ... AgentN      │
+│  Attention Mechanism    │          │                                 │
+│  Experience Replay      │          │  Env Parameters:                │
+│                         │          │   blocks, goal, walls, physics  │
 └─────────────────────────┘          └─────────────────────────────────┘
 ```
 
