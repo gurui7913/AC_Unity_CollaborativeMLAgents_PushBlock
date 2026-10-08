@@ -14,8 +14,7 @@ from matplotlib.ticker import PercentFormatter
 ROOT = Path(__file__).resolve().parents[1]
 ORDER = ["Initial", "Mass_Large_test", "Mass_Light_test", "Mass_Medium_test"]
 LABELS = ["Initial", "Mass_Large", "Mass_Light", "Mass_Medium"]
-COLORS = ["#586574", "#4477AA", "#228877", "#AA7733"]
-HATCHES = ["", "//", "..", "xx"]
+COLORS = ["#1F4168", "#3D6F9D", "#79A0C2", "#B6CCDF"]
 
 
 def load(name):
@@ -105,7 +104,7 @@ def main():
         rows = [by_type[(key, count)] for count in (1, 2, 3)]
         values = [float(row["match_rate"])*100 for row in rows]
         ax.bar(positions, values, width=width*0.92, label=LABELS[index],
-               color=COLORS[index], hatch=HATCHES[index], edgecolor="white", linewidth=0.7)
+               color=COLORS[index], edgecolor="white", linewidth=0.7)
         for x, y, row in zip(positions, values, rows):
             ax.text(x, y+1.3, "{:.1f}%\nn={:,}".format(y, int(row["valid_events"])),
                     ha="center", va="bottom", fontsize=10, linespacing=1.4)
