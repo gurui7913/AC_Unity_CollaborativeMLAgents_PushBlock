@@ -46,8 +46,13 @@ def save(fig, name):
     dest = ROOT / "docs/figures"
     dest.mkdir(parents=True, exist_ok=True)
     for suffix in ("png", "svg"):
-        fig.savefig(dest / (name + "." + suffix), dpi=160, facecolor="white",
+        path = dest / (name + "." + suffix)
+        fig.savefig(path, dpi=160, facecolor="white",
                     metadata={"Date": None} if suffix == "svg" else None)
+        if suffix == "svg":
+            # Normalize generated XML, independent of Windows line endings.
+            text = "\n".join(line.rstrip() for line in path.read_text(encoding="utf-8").splitlines()) + "\n"
+            path.write_bytes(text.encode("utf-8"))
     plt.close(fig)
 
 
