@@ -1,0 +1,9 @@
+# Preserve historical bytes and Unity metadata for checksum verification.
+* -text
+*.pdf binary
+*.png binary
+*.gif binary
+*.onnx binary
+*.nn binary
+*.demo binary
+*.fbx binary

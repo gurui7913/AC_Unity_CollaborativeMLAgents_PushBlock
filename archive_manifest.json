@@ -1,0 +1,955 @@
+{
+  "schema_version": 1,
+  "organized_on": "2026-10-08",
+  "source_roots": {
+    "course_archive": "Digital_Ecologies_RuiGu/Digital Ecologies",
+    "local_release_20": "03_Unity_ML_Agent/05_ml-agents-release_20/ml-agents-release_20"
+  },
+  "files": [
+    {
+      "path": "src/piecewise/BlockContributionTracker.cs",
+      "source_root": "course_archive",
+      "source_path": "Code_Optimized 1 & 2/BlockContributionTracker.cs",
+      "bytes": 6319,
+      "sha256": "390f1114d0c00a26f97875dc122214cd515ec95d7bf98bcdaaeab920c3ecefd1"
+    },
+    {
+      "path": "src/piecewise/BlockTypeIdentifier.cs",
+      "source_root": "course_archive",
+      "source_path": "Code_Optimized 1 & 2/BlockTypeIdentifier.cs",
+      "bytes": 191,
+      "sha256": "97a562f0164db363688a949a1fd569a9a4d9b4cb637dc6e6fb7fd04fb5d54785"
+    },
+    {
+      "path": "src/piecewise/GoalDetect.cs",
+      "source_root": "course_archive",
+      "source_path": "Code_Optimized 1 & 2/GoalDetect.cs",
+      "bytes": 725,
+      "sha256": "18ec280c17f46e9be5dcbc4313f3e5a65fab77382d95195896c0485fb0f9670d"
+    },
+    {
+      "path": "src/piecewise/GoalDetectTrigger.cs",
+      "source_root": "course_archive",
+      "source_path": "Code_Optimized 1 & 2/GoalDetectTrigger.cs",
+      "bytes": 1230,
+      "sha256": "891d1aabf1583e6eef340a1843483b4718618f27338dffa678e220f311fe374f"
+    },
+    {
+      "path": "src/piecewise/PushAgentBasic.cs",
+      "source_root": "course_archive",
+      "source_path": "Code_Optimized 1 & 2/PushAgentBasic.cs",
+      "bytes": 7714,
+      "sha256": "3e845084dc1dcc4f0fbc26ea536fbdbc9ab0842c35dc08a802e2353b087affdf"
+    },
+    {
+      "path": "src/piecewise/PushAgentCollab.cs",
+      "source_root": "course_archive",
+      "source_path": "Code_Optimized 1 & 2/PushAgentCollab.cs",
+      "bytes": 7725,
+      "sha256": "dfc4d435da24791f2f25f34bcc4f91dbf7f4317cd85c12ea72bc170ffb5f5979"
+    },
+    {
+      "path": "src/piecewise/PushBlockEnvController.cs",
+      "source_root": "course_archive",
+      "source_path": "Code_Optimized 1 & 2/PushBlockEnvController.cs",
+      "bytes": 11392,
+      "sha256": "28fca9f42969c4ab2c958656c98eb1933488fd1b50c151c5b926c8d5534e2418"
+    },
+    {
+      "path": "src/piecewise/PushBlockSettings.cs",
+      "source_root": "course_archive",
+      "source_path": "Code_Optimized 1 & 2/PushBlockSettings.cs",
+      "bytes": 1519,
+      "sha256": "99c622c3e3642d3d7f0ec8ad6f05a0a3a1ba0d3d0059380ba0dfb3f62a5e3140"
+    },
+    {
+      "path": "src/absolute_deviation/GoalDetectTrigger.cs",
+      "source_root": "course_archive",
+      "source_path": "Code_Optimized 3 & 4/GoalDetectTrigger.cs",
+      "bytes": 2252,
+      "sha256": "7f383501b0ec736ce5f174f79467d412412acb006e1fd5b382d0321599a77760"
+    },
+    {
+      "path": "src/absolute_deviation/PushAgentCollab.cs",
+      "source_root": "course_archive",
+      "source_path": "Code_Optimized 3 & 4/PushAgentCollab.cs",
+      "bytes": 2334,
+      "sha256": "0f2697f971c571195208e589c88650740223d5c729a65308d76d37bf6ef4103e"
+    },
+    {
+      "path": "src/absolute_deviation/PushBlockEnvController.cs",
+      "source_root": "course_archive",
+      "source_path": "Code_Optimized 3 & 4/PushBlockEnvController.cs",
+      "bytes": 12168,
+      "sha256": "9942f1488ac39d2d4c6d924f88e8e3b4d7aaa6a10d569def205c3c94171807e9"
+    },
+    {
+      "path": "src/absolute_deviation/PushBlockSettings.cs",
+      "source_root": "course_archive",
+      "source_path": "Code_Optimized 3 & 4/PushBlockSettings.cs",
+      "bytes": 763,
+      "sha256": "775d9249ea3d23841d72e13f6d25919cd610e9cab2fbc3c24ab40af248017874"
+    },
+    {
+      "path": "analysis/legacy/Calculate DynamicEfficiency.py",
+      "source_root": "course_archive",
+      "source_path": "Code_ Cooperation Efficiency/Calculate DynamicEfficiency.py",
+      "bytes": 1001,
+      "sha256": "2cc9b4ac307155217a435379272cde93a52ec6c4cbdce97b854546a2a855090b"
+    },
+    {
+      "path": "docs/presentation/FinalPresentationSlides.pdf",
+      "source_root": "course_archive",
+      "source_path": "FinalPresentationSlides.pdf",
+      "bytes": 5527930,
+      "sha256": "8d9b7c4e6e4f8a38cd691f5b3ac763c78cd673d968a01bbf64128ce9601020b7"
+    },
+    {
+      "path": "docs/ProjectSlides.pdf",
+      "source_root": "course_archive",
+      "source_path": "ProjectSlides.pdf",
+      "bytes": 2078545,
+      "sha256": "9c110caf93e338e91b379d5d960595814ca8633df3b1418cf4939fc5e3bcd9ee"
+    },
+    {
+      "path": "data/raw/Initial.csv",
+      "source_root": "course_archive",
+      "source_path": "Results_ Cooperation Efficiency/Initial.csv",
+      "bytes": 102169,
+      "sha256": "d5a77ff3c55ba38d0e71506de1924f98c2388126148610eac4093aab84520ee1"
+    },
+    {
+      "path": "data/derived/Initial_test_Efficiency.csv",
+      "source_root": "course_archive",
+      "source_path": "Results_ Cooperation Efficiency/Initial_test_Efficiency.csv",
+      "bytes": 271618,
+      "sha256": "c8e9992e2cc0d2725f7c4d049eec9613bfeaa42ef9e8b192d9e46b5c54d0fe41"
+    },
+    {
+      "path": "data/raw/Mass_Large_test.csv",
+      "source_root": "course_archive",
+      "source_path": "Results_ Cooperation Efficiency/Mass_Large_test.csv",
+      "bytes": 95758,
+      "sha256": "3a34c8170fedac98bb158d9e9c4ed4562c4e264b96f8544842c09bdd8fef4d3c"
+    },
+    {
+      "path": "data/derived/Mass_Large_test_Efficiency.csv",
+      "source_root": "course_archive",
+      "source_path": "Results_ Cooperation Efficiency/Mass_Large_test_Efficiency.csv",
+      "bytes": 253822,
+      "sha256": "8fd5d0facfd89e2dde47919a3afe9f8537a1df6ae07c7ef3d27fd07ec4264cc3"
+    },
+    {
+      "path": "data/raw/Mass_Light_test.csv",
+      "source_root": "course_archive",
+      "source_path": "Results_ Cooperation Efficiency/Mass_Light_test.csv",
+      "bytes": 98820,
+      "sha256": "e9eabfd431a4649a7fc693c5546ec595724622460dbfabb44d40876a2a4f139e"
+    },
+    {
+      "path": "data/derived/Mass_Light_test_Efficiency.csv",
+      "source_root": "course_archive",
+      "source_path": "Results_ Cooperation Efficiency/Mass_Light_test_Efficiency.csv",
+      "bytes": 259183,
+      "sha256": "eb44469f940674a70da244a4a8f4a180085c1b1e6faf7139cd4738f5497cba00"
+    },
+    {
+      "path": "data/raw/Mass_Medium_test.csv",
+      "source_root": "course_archive",
+      "source_path": "Results_ Cooperation Efficiency/Mass_Medium_test.csv",
+      "bytes": 80783,
+      "sha256": "14462f205553b8034bf9e52541543fb1c3808ec147ca3338566f89641fce38f5"
+    },
+    {
+      "path": "data/derived/Mass_Medium_test_Efficiency.csv",
+      "source_root": "course_archive",
+      "source_path": "Results_ Cooperation Efficiency/Mass_Medium_test_Efficiency.csv",
+      "bytes": 226355,
+      "sha256": "b9f06522013ea4a4acbe2a73e782b471a657a5ad1aa688a722c38d141d008c12"
+    },
+    {
+      "path": "docs/figures/Dynamic Cooperation Efficiency Across Four Configurations.png",
+      "source_root": "course_archive",
+      "source_path": "Results_ Cooperation Efficiency/Dynamic Cooperation Efficiency Across Four Configurations.png",
+      "bytes": 111125,
+      "sha256": "2d48c223a9d1b30f56c1b29bcb7b43e91bbe1f1fb8c126aff1c215a3278d7334"
+    },
+    {
+      "path": "docs/figures/Final Cooperation Efficiency Across Four Configurations.png",
+      "source_root": "course_archive",
+      "source_path": "Results_ Cooperation Efficiency/Final Cooperation Efficiency Across Four Configurations.png",
+      "bytes": 146202,
+      "sha256": "1b93d502a9f50081c345f6a3e76a61491d414a70841c894045ffa113c426204f"
+    },
+    {
+      "path": "docs/media/Customized_Training_Outcome.gif",
+      "source_root": "course_archive",
+      "source_path": "Required Images/Customized Training Outcome.gif",
+      "bytes": 147763,
+      "sha256": "8ad6b19e0d7ef2a61af901c7e32e43c07288da7bdb7d952c64679d9db1bb0efe"
+    },
+    {
+      "path": "docs/media/Default_Training_Outcome.gif",
+      "source_root": "course_archive",
+      "source_path": "Required Images/Default Training Outcome.gif",
+      "bytes": 156933,
+      "sha256": "9f7a5d6fd411bd35a66126b7bdb1cd11b164aaaf67ee81845b706956b58c84ea"
+    },
+    {
+      "path": "docs/media/Grid_Inputs.png",
+      "source_root": "course_archive",
+      "source_path": "Required Images/Grid Inputs.png",
+      "bytes": 36356,
+      "sha256": "060501cfb84905c2e3d7509377e214b27b8f1f5a9f5c0951bd9cf2ec251faf72"
+    },
+    {
+      "path": "docs/media/Result_Optimize_1_&_2.png",
+      "source_root": "course_archive",
+      "source_path": "Required Images/Result Optimize 1 & 2.png",
+      "bytes": 175802,
+      "sha256": "65573de4bd5a5831658f5a08206e93534f018030919ce31be0e045190792c61c"
+    },
+    {
+      "path": "docs/media/Result_Optimize_3_&_4.png",
+      "source_root": "course_archive",
+      "source_path": "Required Images/Result Optimize 3 & 4.png",
+      "bytes": 170785,
+      "sha256": "9bffd0a27a2f7c0846a90f96aca1f4b6f53a1bc76216d527666ae75a91528642"
+    },
+    {
+      "path": "docs/media/Result_Initial.png",
+      "source_root": "course_archive",
+      "source_path": "Required Images/Result_Initial.png",
+      "bytes": 139888,
+      "sha256": "7775c14687dd22d1d6c13b8f500ff779113edf9ccd310fb84acb6c6b35770698"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Demos.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Demos.meta",
+      "bytes": 172,
+      "sha256": "ffd6b7a417ac8ad09f9350f652780692ffa84fec793f8e1f2d77877c4904dbe0"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Meshes.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Meshes.meta",
+      "bytes": 172,
+      "sha256": "838617100dd1319900fca52b52a361cc61e655da43bfac1d4f4d6dcb01ddf802"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Prefabs.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Prefabs.meta",
+      "bytes": 214,
+      "sha256": "574f912f8be2dc0b6217bcc4c8260313438badef5a9be79e8b6d3a5280d35ae2"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scenes.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scenes.meta",
+      "bytes": 214,
+      "sha256": "712d4ecc8ab71aa32c26e830fa0601e52b30248eca6042a6502cc901b04cb0f8"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts.meta",
+      "bytes": 214,
+      "sha256": "864449bc49d5ad6286001bd952f32febadc472cdb9537bcfce80bca5a1c68a29"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/TFModels.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/TFModels.meta",
+      "bytes": 172,
+      "sha256": "f5646dccc6198a996adc1303b6f4a1e4507c7962d7628e8e74725cb7f99fd237"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Demos/ExpertPushBlock.demo",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Demos/ExpertPushBlock.demo",
+      "bytes": 2284551,
+      "sha256": "a017f3d872abc0a939792e4be045f7042757362d2818328383cfa16147e89ee8"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Demos/ExpertPushBlock.demo.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Demos/ExpertPushBlock.demo.meta",
+      "bytes": 443,
+      "sha256": "70b0beb15a0e1e1804230e59b5d3e00b18ea332574d1b7899851e7b95bcba81c"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Meshes/PushBlockCourt.fbx",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Meshes/PushBlockCourt.fbx",
+      "bytes": 166768,
+      "sha256": "62ad7a4069d7e883c2c78a0555e365a9aa17365481eceaa64d0731f9b8aad4a1"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Meshes/PushBlockCourt.fbx.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Meshes/PushBlockCourt.fbx.meta",
+      "bytes": 3070,
+      "sha256": "416589e884bddc76e9913e12929b9f1bdbaaeeee026183f4d207e7f8c88fea88"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Prefabs/PushBlockAgentGridCollab.prefab",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Prefabs/PushBlockAgentGridCollab.prefab",
+      "bytes": 18652,
+      "sha256": "67f764c63b7f15d24039c407ef1aab22236c14e138f20babb6e20d98d8c5024a"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Prefabs/PushBlockAgentGridCollab.prefab.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Prefabs/PushBlockAgentGridCollab.prefab.meta",
+      "bytes": 154,
+      "sha256": "a4b92bbbe0f33d6fdffe7f0d452acaa581085094b5dcab764d5e97308337bb28"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Prefabs/PushBlockArea.prefab",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Prefabs/PushBlockArea.prefab",
+      "bytes": 32754,
+      "sha256": "5ee92a02bc0eb42d77c9abbe5faf92579eeeb92223b940ba825bbb09bdad58ff"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Prefabs/PushBlockArea.prefab.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Prefabs/PushBlockArea.prefab.meta",
+      "bytes": 232,
+      "sha256": "b9791564882050bfc7c555fcab3efd83c4663ba4a6e1569a5a3dc5cb2003149b"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Prefabs/PushBlockCollabAreaGrid.prefab",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Prefabs/PushBlockCollabAreaGrid.prefab",
+      "bytes": 81172,
+      "sha256": "4dcb1a13572256fbebb250f22b3136bf30286f5d13d9ff7edea15b16ec9299ef"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Prefabs/PushBlockCollabAreaGrid.prefab.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Prefabs/PushBlockCollabAreaGrid.prefab.meta",
+      "bytes": 154,
+      "sha256": "7d626b247b3f0abba84aec308af4707c56f7686b7e2fa5e65222f5e255093aab"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scenes/PushBlock.unity",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scenes/PushBlock.unity",
+      "bytes": 82848,
+      "sha256": "430f3ed352350cfe474d59236a9a84b748e090664bc8b4b374b7e21f44454654"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scenes/PushBlock.unity.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scenes/PushBlock.unity.meta",
+      "bytes": 196,
+      "sha256": "2ce8e5828d03d6c9b51bdbccb647af4003caf9bbc5b6363c1ff48cdd716b180a"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scenes/PushBlockCollab.unity",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scenes/PushBlockCollab.unity",
+      "bytes": 93941,
+      "sha256": "54beaee257b53946097274b3819d547b902a637c77681a9434301993430ec82e"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scenes/PushBlockCollab.unity.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scenes/PushBlockCollab.unity.meta",
+      "bytes": 196,
+      "sha256": "4c799d9f8009a7b995fdeb35ee19129f28b829b3841063c9beb4c6c8a0f81dd9"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/BlockContributionTracker.cs",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/BlockContributionTracker.cs",
+      "bytes": 6225,
+      "sha256": "9eb8e84005794b5081885d7241516cde9d5c60b5060d7ac4cd8e33336ded1b0e"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/BlockContributionTracker.cs.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/BlockContributionTracker.cs.meta",
+      "bytes": 243,
+      "sha256": "7e33ce311149e655e17732051c3878c024443569e060efd1a08c26e25c1b3329"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/BlockTypeIdentifier.cs",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/BlockTypeIdentifier.cs",
+      "bytes": 191,
+      "sha256": "97a562f0164db363688a949a1fd569a9a4d9b4cb637dc6e6fb7fd04fb5d54785"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/BlockTypeIdentifier.cs.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/BlockTypeIdentifier.cs.meta",
+      "bytes": 243,
+      "sha256": "c3c4d88f35186daeb47cfffedb680c635cb70806ef5b799317c36b44016cb95d"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/GoalDetect.cs",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/GoalDetect.cs",
+      "bytes": 725,
+      "sha256": "18ec280c17f46e9be5dcbc4313f3e5a65fab77382d95195896c0485fb0f9670d"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/GoalDetect.cs.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/GoalDetect.cs.meta",
+      "bytes": 285,
+      "sha256": "8ddb3aea8c2a62133ca1e3e83dcae0c8b30fc441cdbc3bf28d000b8885d827ff"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/GoalDetectTrigger.cs",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/GoalDetectTrigger.cs",
+      "bytes": 1230,
+      "sha256": "891d1aabf1583e6eef340a1843483b4718618f27338dffa678e220f311fe374f"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/GoalDetectTrigger.cs.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/GoalDetectTrigger.cs.meta",
+      "bytes": 243,
+      "sha256": "9874b0cf96885619a72c3f264257053023dcd7c5019df313b0f4e5b17e0702b5"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/PushAgentBasic.cs",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/PushAgentBasic.cs",
+      "bytes": 7714,
+      "sha256": "3e845084dc1dcc4f0fbc26ea536fbdbc9ab0842c35dc08a802e2353b087affdf"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/PushAgentBasic.cs.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/PushAgentBasic.cs.meta",
+      "bytes": 262,
+      "sha256": "e418feeef7797408ff69210a5753df47be9b453ed0ea887dbf06b7fccf85a1ce"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/PushAgentCollab.cs",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/PushAgentCollab.cs",
+      "bytes": 7723,
+      "sha256": "dc6bc42946d9bf04d0ac9103e0a772e4d1d7ffcb51ee4fac9a69628fa70ac349"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/PushAgentCollab.cs.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/PushAgentCollab.cs.meta",
+      "bytes": 262,
+      "sha256": "149ae14b14788c24c402e7cc37e4ec65982fc0e0664229d63c2d0e181744d1c1"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/PushBlockEnvController.cs",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/PushBlockEnvController.cs",
+      "bytes": 11869,
+      "sha256": "4229aa734bb6f8e8b243494fe96eea014e29ba26da7836a700df74919646ac05"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/PushBlockEnvController.cs.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/PushBlockEnvController.cs.meta",
+      "bytes": 243,
+      "sha256": "46e0c2fa869b7d4b6927ea309cdc3139a4cae99e1eeb73a9aab7f938207f46a8"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/PushBlockSettings.cs",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/PushBlockSettings.cs",
+      "bytes": 1377,
+      "sha256": "7463b2bdad3392ca65e4a8f696d6dc2c65b2db480f520f02e0dcaf19ad9ef3e8"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/Scripts/PushBlockSettings.cs.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/Scripts/PushBlockSettings.cs.meta",
+      "bytes": 243,
+      "sha256": "c9d2a976045d2df7c4230fb56f8932b0abac111fc55eec9d5e6f547916cc186f"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/TFModels/PushBlock.nn",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/TFModels/PushBlock.nn",
+      "bytes": 489609,
+      "sha256": "546bc8d8ccf1e8a9be6739efc70c5a096bae1e8c1d19abf19e296e144135b121"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/TFModels/PushBlock.nn.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/TFModels/PushBlock.nn.meta",
+      "bytes": 305,
+      "sha256": "d931dafc770a6a83c95a86d066b46fa5ff9013bfc8c63e539318d385c096a6cf"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/TFModels/PushBlockCollab-12061536.onnx",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/TFModels/PushBlockCollab-12061536.onnx",
+      "bytes": 644185,
+      "sha256": "a40a81f5765bbfe163e7ca7321c7a0e8a9d4daa531ad3d5368cd16101f2c580a"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/TFModels/PushBlockCollab-12061536.onnx.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/TFModels/PushBlockCollab-12061536.onnx.meta",
+      "bytes": 421,
+      "sha256": "a92b7c2114a9cb97449153fb1478c57d624bd0bb23fe9157f1d43be924b10cb7"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/TFModels/PushBlockCollab-15000177.onnx",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/TFModels/PushBlockCollab-15000177.onnx",
+      "bytes": 644185,
+      "sha256": "c9448d9346974e561a484306f1b554d04a3868f9a2fb8f756cddc9c9482cd4d0"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/TFModels/PushBlockCollab-15000177.onnx.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/TFModels/PushBlockCollab-15000177.onnx.meta",
+      "bytes": 421,
+      "sha256": "1fb8bef9ae8287e221081dec2738645a00303bfe4af9e35f9d5e3aa437cb5228"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/TFModels/PushBlockCollab.onnx",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/TFModels/PushBlockCollab.onnx",
+      "bytes": 638530,
+      "sha256": "b3e74ee9c7bd58a55f3822d9d77c7754c8f277283a1cec3354b79568155056a1"
+    },
+    {
+      "path": "unity/exports/piecewise/PushBlock/TFModels/PushBlockCollab.onnx.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 1 & 2/PushBlock/TFModels/PushBlockCollab.onnx.meta",
+      "bytes": 376,
+      "sha256": "c7ec96eb04534041ab786594b5259c0f7cd7ce1ad8c919e128a3fe671818216c"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Demos.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Demos.meta",
+      "bytes": 172,
+      "sha256": "ffd6b7a417ac8ad09f9350f652780692ffa84fec793f8e1f2d77877c4904dbe0"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Meshes.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Meshes.meta",
+      "bytes": 172,
+      "sha256": "838617100dd1319900fca52b52a361cc61e655da43bfac1d4f4d6dcb01ddf802"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Prefabs.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Prefabs.meta",
+      "bytes": 214,
+      "sha256": "574f912f8be2dc0b6217bcc4c8260313438badef5a9be79e8b6d3a5280d35ae2"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Scenes.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Scenes.meta",
+      "bytes": 214,
+      "sha256": "712d4ecc8ab71aa32c26e830fa0601e52b30248eca6042a6502cc901b04cb0f8"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Scripts.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Scripts.meta",
+      "bytes": 214,
+      "sha256": "864449bc49d5ad6286001bd952f32febadc472cdb9537bcfce80bca5a1c68a29"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/TFModels.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/TFModels.meta",
+      "bytes": 172,
+      "sha256": "f5646dccc6198a996adc1303b6f4a1e4507c7962d7628e8e74725cb7f99fd237"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Demos/ExpertPushBlock.demo",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Demos/ExpertPushBlock.demo",
+      "bytes": 2284551,
+      "sha256": "a017f3d872abc0a939792e4be045f7042757362d2818328383cfa16147e89ee8"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Demos/ExpertPushBlock.demo.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Demos/ExpertPushBlock.demo.meta",
+      "bytes": 443,
+      "sha256": "70b0beb15a0e1e1804230e59b5d3e00b18ea332574d1b7899851e7b95bcba81c"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Meshes/PushBlockCourt.fbx",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Meshes/PushBlockCourt.fbx",
+      "bytes": 166768,
+      "sha256": "62ad7a4069d7e883c2c78a0555e365a9aa17365481eceaa64d0731f9b8aad4a1"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Meshes/PushBlockCourt.fbx.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Meshes/PushBlockCourt.fbx.meta",
+      "bytes": 3070,
+      "sha256": "416589e884bddc76e9913e12929b9f1bdbaaeeee026183f4d207e7f8c88fea88"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Prefabs/PushBlockAgentGridCollab.prefab",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Prefabs/PushBlockAgentGridCollab.prefab",
+      "bytes": 18652,
+      "sha256": "67f764c63b7f15d24039c407ef1aab22236c14e138f20babb6e20d98d8c5024a"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Prefabs/PushBlockAgentGridCollab.prefab.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Prefabs/PushBlockAgentGridCollab.prefab.meta",
+      "bytes": 154,
+      "sha256": "a4b92bbbe0f33d6fdffe7f0d452acaa581085094b5dcab764d5e97308337bb28"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Prefabs/PushBlockArea.prefab",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Prefabs/PushBlockArea.prefab",
+      "bytes": 32754,
+      "sha256": "5ee92a02bc0eb42d77c9abbe5faf92579eeeb92223b940ba825bbb09bdad58ff"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Prefabs/PushBlockArea.prefab.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Prefabs/PushBlockArea.prefab.meta",
+      "bytes": 232,
+      "sha256": "b9791564882050bfc7c555fcab3efd83c4663ba4a6e1569a5a3dc5cb2003149b"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Prefabs/PushBlockCollabAreaGrid.prefab",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Prefabs/PushBlockCollabAreaGrid.prefab",
+      "bytes": 78793,
+      "sha256": "aa8b05da2ebfe87a1b90fa4ea03580c2046e770b42f1b57ba2d8597371f2e331"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Prefabs/PushBlockCollabAreaGrid.prefab.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Prefabs/PushBlockCollabAreaGrid.prefab.meta",
+      "bytes": 154,
+      "sha256": "7d626b247b3f0abba84aec308af4707c56f7686b7e2fa5e65222f5e255093aab"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Scenes/PushBlock.unity",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Scenes/PushBlock.unity",
+      "bytes": 82848,
+      "sha256": "430f3ed352350cfe474d59236a9a84b748e090664bc8b4b374b7e21f44454654"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Scenes/PushBlock.unity.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Scenes/PushBlock.unity.meta",
+      "bytes": 196,
+      "sha256": "2ce8e5828d03d6c9b51bdbccb647af4003caf9bbc5b6363c1ff48cdd716b180a"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Scenes/PushBlockCollab.unity",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Scenes/PushBlockCollab.unity",
+      "bytes": 523937,
+      "sha256": "12250363685caa150efa6a1888445bc8a82a595d5c302f38b1d13dc68964e5eb"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Scenes/PushBlockCollab.unity.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Scenes/PushBlockCollab.unity.meta",
+      "bytes": 196,
+      "sha256": "4c799d9f8009a7b995fdeb35ee19129f28b829b3841063c9beb4c6c8a0f81dd9"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Scripts/GoalDetectTrigger.cs",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Scripts/GoalDetectTrigger.cs",
+      "bytes": 1197,
+      "sha256": "865a57a31dd466ebd2467b6698c38b763ff09dec3ee82f2b9017eee99b1942e7"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Scripts/GoalDetectTrigger.cs.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Scripts/GoalDetectTrigger.cs.meta",
+      "bytes": 243,
+      "sha256": "9874b0cf96885619a72c3f264257053023dcd7c5019df313b0f4e5b17e0702b5"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Scripts/PushAgentCollab.cs",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Scripts/PushAgentCollab.cs",
+      "bytes": 1264,
+      "sha256": "ff9df14dc394f2464b6ad56e8892579d7f02192c64da6cac33cb64fefbf5ee83"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Scripts/PushAgentCollab.cs.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Scripts/PushAgentCollab.cs.meta",
+      "bytes": 243,
+      "sha256": "461b6c7ca59601a083dd6ab68a98ed16de1ca569c24e26216a28817237d3f36f"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Scripts/PushBlockEnvController.cs",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Scripts/PushBlockEnvController.cs",
+      "bytes": 11278,
+      "sha256": "c5ef02d7c8ca3c6bf3d1b89752c45ceeae14be3b23d62b8eed187c2fbf3dc956"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Scripts/PushBlockEnvController.cs.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Scripts/PushBlockEnvController.cs.meta",
+      "bytes": 243,
+      "sha256": "46e0c2fa869b7d4b6927ea309cdc3139a4cae99e1eeb73a9aab7f938207f46a8"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Scripts/PushBlockSettings.cs",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Scripts/PushBlockSettings.cs",
+      "bytes": 258,
+      "sha256": "957d150dd206af10f2cc91062546a1ee964bb6f894413022ac99c1696411af1c"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/Scripts/PushBlockSettings.cs.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/Scripts/PushBlockSettings.cs.meta",
+      "bytes": 243,
+      "sha256": "c9d2a976045d2df7c4230fb56f8932b0abac111fc55eec9d5e6f547916cc186f"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/TFModels/PushBlock.nn",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/TFModels/PushBlock.nn",
+      "bytes": 489609,
+      "sha256": "546bc8d8ccf1e8a9be6739efc70c5a096bae1e8c1d19abf19e296e144135b121"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/TFModels/PushBlock.nn.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/TFModels/PushBlock.nn.meta",
+      "bytes": 305,
+      "sha256": "d931dafc770a6a83c95a86d066b46fa5ff9013bfc8c63e539318d385c096a6cf"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/TFModels/PushBlockCollab-15000102.onnx",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/TFModels/PushBlockCollab-15000102.onnx",
+      "bytes": 643240,
+      "sha256": "b9a52125d44ab0bdd2181ef363c06214812c59e7f66f8ad64c1775d084ab36b2"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/TFModels/PushBlockCollab-15000102.onnx.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/TFModels/PushBlockCollab-15000102.onnx.meta",
+      "bytes": 421,
+      "sha256": "60c5543f2cba605be852d6f0691695cd6a78bf85869eb36576c05e4dd6926bcf"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/TFModels/PushBlockCollab.onnx",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/TFModels/PushBlockCollab.onnx",
+      "bytes": 638530,
+      "sha256": "b3e74ee9c7bd58a55f3822d9d77c7754c8f277283a1cec3354b79568155056a1"
+    },
+    {
+      "path": "unity/exports/absolute_deviation/PushBlock/TFModels/PushBlockCollab.onnx.meta",
+      "source_root": "course_archive",
+      "source_path": "Scene_Optimized 3 & 4 & 5/PushBlock/TFModels/PushBlockCollab.onnx.meta",
+      "bytes": 376,
+      "sha256": "c7ec96eb04534041ab786594b5259c0f7cd7ce1ad8c919e128a3fe671818216c"
+    },
+    {
+      "path": "configs/training/initial_pan.yaml",
+      "source_root": "course_archive",
+      "source_path": "Results_Initial_PAN/configuration.yaml",
+      "bytes": 1760,
+      "sha256": "f1f0aa70a064f5712ba21b6eea270d6cf20d26fc19488cf40689729b89cd28e0"
+    },
+    {
+      "path": "experiments/training_status/initial_pan.json",
+      "source_root": "course_archive",
+      "source_path": "Results_Initial_PAN/run_logs/training_status.json",
+      "bytes": 2775,
+      "sha256": "567a516904b106ac0cb16de4ca460d71e0d108388a2ca060edfa49e78a09107b"
+    },
+    {
+      "path": "models/initial_pan/PushBlockCollab.onnx",
+      "source_root": "course_archive",
+      "source_path": "Results_Initial_PAN/PushBlockCollab.onnx",
+      "bytes": 643240,
+      "sha256": "5dedff77dfff141336b3b49d629dc16684c86247bfdb12139a7e54eff9d23457"
+    },
+    {
+      "path": "configs/training/optimize_0.yaml",
+      "source_root": "course_archive",
+      "source_path": "Results_Optimize 0/configuration.yaml",
+      "bytes": 1804,
+      "sha256": "80f0d79bd097c9701d33c7a4aa612dd9d7b889aa57451494168cdc5beadd2847"
+    },
+    {
+      "path": "experiments/training_status/optimize_0.json",
+      "source_root": "course_archive",
+      "source_path": "Results_Optimize 0/run_logs/training_status.json",
+      "bytes": 2695,
+      "sha256": "d25671819f836eb00ace43eaffebdfe9b895b79839137677bea55c15de7245c5"
+    },
+    {
+      "path": "models/optimize_0/PushBlockCollab.onnx",
+      "source_root": "course_archive",
+      "source_path": "Results_Optimize 0/PushBlockCollab.onnx",
+      "bytes": 1432393,
+      "sha256": "9575a62ae2554171efc45686b2c5b9ecf08380e6aff840f3cdd272029590bda6"
+    },
+    {
+      "path": "configs/training/optimize_1.yaml",
+      "source_root": "course_archive",
+      "source_path": "Results_Optimize 1/configuration.yaml",
+      "bytes": 1754,
+      "sha256": "8dbbb56fe510222a3533476ee472cb7c5806aa04bcf8321963978341babef73a"
+    },
+    {
+      "path": "experiments/training_status/optimize_1.json",
+      "source_root": "course_archive",
+      "source_path": "Results_Optimize 1/run_logs/training_status.json",
+      "bytes": 2704,
+      "sha256": "d2a009117a29db6d5c2069c5e2e98891f76a55213de3646b6744c3905b9bfad0"
+    },
+    {
+      "path": "models/optimize_1/PushBlockCollab.onnx",
+      "source_root": "course_archive",
+      "source_path": "Results_Optimize 1/PushBlockCollab.onnx",
+      "bytes": 643240,
+      "sha256": "b83c78a2d86d3bad3d0c0eb2b3ca435f49cebe5648092bb1564a8db0ba62bd3d"
+    },
+    {
+      "path": "configs/training/optimize_2.yaml",
+      "source_root": "course_archive",
+      "source_path": "Results_Optimize 2/configuration.yaml",
+      "bytes": 1804,
+      "sha256": "62cede0e4ec9801cbc42de2e5a8085cdb536054ac7177289f90bd3e7fd9dfc78"
+    },
+    {
+      "path": "experiments/training_status/optimize_2.json",
+      "source_root": "course_archive",
+      "source_path": "Results_Optimize 2/run_logs/training_status.json",
+      "bytes": 2693,
+      "sha256": "bb6349d1dfe6ece9aefadda420e422cf8de085d434207d07d4908525a5cfacd4"
+    },
+    {
+      "path": "models/optimize_2/PushBlockCollab.onnx",
+      "source_root": "course_archive",
+      "source_path": "Results_Optimize 2/PushBlockCollab.onnx",
+      "bytes": 1432393,
+      "sha256": "eda3f005400de88e42be37ff883584792367534eb647101d29cbb549956ed9ec"
+    },
+    {
+      "path": "configs/training/optimize_3.yaml",
+      "source_root": "course_archive",
+      "source_path": "Results_Optimize 3/configuration.yaml",
+      "bytes": 1751,
+      "sha256": "e0813d279e93b2e4a9261e17259a18f334501a23827ce327b328fc8baa50cb4b"
+    },
+    {
+      "path": "experiments/training_status/optimize_3.json",
+      "source_root": "course_archive",
+      "source_path": "Results_Optimize 3/run_logs/training_status.json",
+      "bytes": 2668,
+      "sha256": "f136243be3668f1128d29e3f18c69936d765ba64f770d6c3733394971c27ce61"
+    },
+    {
+      "path": "models/optimize_3/PushBlockCollab.onnx",
+      "source_root": "course_archive",
+      "source_path": "Results_Optimize 3/PushBlockCollab.onnx",
+      "bytes": 643240,
+      "sha256": "ebe4695ea17a3009e2570d694dc1a2fd76beda513d34d7826f04f0443ff536b8"
+    },
+    {
+      "path": "configs/training/optimize_5.yaml",
+      "source_root": "course_archive",
+      "source_path": "Results_Optimize 5/configuration.yaml",
+      "bytes": 1754,
+      "sha256": "844422fba5b3b467233a4f6033f83f82e97e2b24894b2328b876d027de9002ae"
+    },
+    {
+      "path": "experiments/training_status/optimize_5.json",
+      "source_root": "course_archive",
+      "source_path": "Results_Optimize 5/run_logs/training_status.json",
+      "bytes": 2703,
+      "sha256": "9a939c84022991b198463e7bbd3a9c50861e830d52c6e4e765d5e65ace0e2de4"
+    },
+    {
+      "path": "models/optimize_5/PushBlockCollab.onnx",
+      "source_root": "course_archive",
+      "source_path": "Results_Optimize 5/PushBlockCollab.onnx",
+      "bytes": 643240,
+      "sha256": "b89fe0064075691be15354212c6af1d8963a41cbcc11950eb2e2a99a2abefc45"
+    },
+    {
+      "path": "models/evaluation/Mass_large_test.onnx",
+      "source_root": "course_archive",
+      "source_path": "Results_ Cooperation Efficiency/Mass_large_test.onnx",
+      "bytes": 643240,
+      "sha256": "e1eb734389776db97b2d6a2533121108b524aee8383936dcbf57de1432f4f47d"
+    },
+    {
+      "path": "models/evaluation/Mass_light_test.onnx",
+      "source_root": "course_archive",
+      "source_path": "Results_ Cooperation Efficiency/Mass_light_test.onnx",
+      "bytes": 643240,
+      "sha256": "648c0271fc2e3a1750510c0c59069e6652632801f8af56f7ae28f20570f1163f"
+    },
+    {
+      "path": "models/evaluation/Mass_medium_test.onnx",
+      "source_root": "course_archive",
+      "source_path": "Results_ Cooperation Efficiency/Mass_medium_test.onnx",
+      "bytes": 643240,
+      "sha256": "636214098ab3d55d0e234f6cfb9cab4232d465d461ff6f962b7c672f5673fa38"
+    },
+    {
+      "path": "environment/reference/Project/ProjectSettings/ProjectVersion.txt",
+      "source_root": "local_release_20",
+      "source_path": "Project/ProjectSettings/ProjectVersion.txt",
+      "bytes": 85,
+      "sha256": "5b9e6345b470e7a986086267129db7db22fe57e445f8721ef99e11d30223caee"
+    },
+    {
+      "path": "environment/reference/Project/Packages/manifest.json",
+      "source_root": "local_release_20",
+      "source_path": "Project/Packages/manifest.json",
+      "bytes": 821,
+      "sha256": "322261ccd9c53196a529aaf28529a4668ea73f1ba11b06ea016b6b143fb0d870"
+    },
+    {
+      "path": "environment/reference/com.unity.ml-agents/package.json",
+      "source_root": "local_release_20",
+      "source_path": "com.unity.ml-agents/package.json",
+      "bytes": 429,
+      "sha256": "4e3ef05d663d30b708dea782d62558fdc415c12cd67c5c354f03729d978c773b"
+    },
+    {
+      "path": "environment/reference/com.unity.ml-agents.extensions/package.json",
+      "source_root": "local_release_20",
+      "source_path": "com.unity.ml-agents.extensions/package.json",
+      "bytes": 325,
+      "sha256": "aecc08e35d767dc66c030f1db149050f9f6d7d346ead9be65183206ee84bc7a9"
+    },
+    {
+      "path": "LICENSES/Unity-ML-Agents-Apache-2.0.txt",
+      "source_root": "local_release_20",
+      "source_path": "LICENSE.md",
+      "bytes": 11324,
+      "sha256": "79520c92d89a34c0e31b7d4681e9e331a5bf349eeaf6cf1ea566996099ab12a4"
+    }
+  ]
+}
