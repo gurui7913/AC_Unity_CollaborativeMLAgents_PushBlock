@@ -21,33 +21,6 @@ UCL Architectural Computation 的 Digital Ecologies 小组项目，完成于 202
 
 默认示例本来就有团队奖励和时间惩罚；这里增加参与人数条件。“贡献”是接触/时间窗口等启发式代理。早期代码有超额人数得到正奖励的符号问题，本次保留历史代码并解释，未悄悄修复。后期公式仍在进球时触发，不是每步密集反馈。
 
-## 团队实验结果与评估
-
-以下数据属于**团队实验档案**，原始训练后分析由队友负责。图表根据归档 CSV 重新生成，不作为 Gu Rui 的个人分析成果。
-
-指标为**参与人数匹配率**：剔除 `Used=0` 的进球事件后，`Used==Required` 的事件占比。
-
-### 总体人数匹配率
-
-![总体人数匹配率：Initial 59.54%、Mass_Large 62.38%、Mass_Light 62.70%、Mass_Medium 65.89%；图内标注有效事件数。](docs/figures/participation_match_overall.png)
-
-| 档案配置 | 匹配事件 / 有效进球事件 | 匹配率 |
-|---|---:|---:|
-| Initial | 3,114 / 5,230 | 59.54% |
-| Mass_Large | 3,044 / 4,880 | 62.38% |
-| Mass_Light | 3,120 / 4,976 | 62.70% |
-| Mass_Medium | 2,867 / 4,351 | 65.89% |
-
-### 按目标参与人数分组
-
-![按目标参与人数分组的匹配率：Initial 到 Mass_Medium 的单人目标匹配率上升，三人目标匹配率下降；每根柱标注有效进球事件数。](docs/figures/participation_match_by_team_size.png)
-
-总体结果掩盖了任务之间的取舍：Initial 到 Mass_Medium，单人目标匹配率从 **50.76% 上升到 77.08%**，三人目标则从 **83.81% 下降到 64.58%**。因此，总体匹配率较高不代表所有方块类型都表现更好。
-
-这些是进球事件的描述性统计，**不是完成速度或回合成功率**。不同配置的方块质量、奖励及部分训练参数存在差异，不能将变化单独归因于奖励公式；图中的事件数也不代表独立训练重复次数。详见[评估说明](docs/evaluation.md)与[分类型完整数据](analysis/output/by_block_type.csv)。
-
-矢量图下载：[总体 SVG](docs/figures/participation_match_overall.svg) · [分组 SVG](docs/figures/participation_match_by_team_size.svg)。
-
 ## 重新生成数据与图表
 
 在仓库根目录运行：
@@ -65,7 +38,7 @@ python -m pip install -r analysis/requirements-charts.txt
 python analysis/plot_results.py
 ```
 
-输出包含用于 README 展示的 PNG 及可复用的 SVG；这套绘图环境与历史 Unity 训练环境分开。
+输出包含 PNG 及可复用的 SVG；这套绘图环境与历史 Unity 训练环境分开。
 
 仓库保存的是部分场景导出，**不是 Unity Hub 可直接打开的完整工程**。按指南准备 release_20 上游工程，再导入一个版本并检查引用。同名类的两个版本，以及 `src` 和导出脚本，不要重复放入 `Assets`。
 
