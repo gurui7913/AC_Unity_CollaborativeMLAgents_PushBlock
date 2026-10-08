@@ -7,7 +7,7 @@ Organized on 2026-10-08 from local `Digital_Ecologies_RuiGu/Digital Ecologies`, 
 | `Code_Optimized 1 & 2/` | `src/piecewise/` |
 | `Code_Optimized 3 & 4/` | `src/absolute_deviation/` |
 | `Code_ Cooperation Efficiency/` | `analysis/legacy/` |
-| `ProjectSlides.pdf` | `docs/ProjectSlides.pdf` |
+| `ProjectSlides.pdf` | Removed from the current GitHub tree; use `docs/presentation/FinalPresentationSlides.pdf` |
 
 Previous GitHub code and local listings were compared: decoded lines match, with byte differences due to line endings. Imported files preserve local bytes. Git history retains previous paths and README; no history rewrite is required.
 

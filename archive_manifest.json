@@ -105,13 +105,6 @@
       "sha256": "8d9b7c4e6e4f8a38cd691f5b3ac763c78cd673d968a01bbf64128ce9601020b7"
     },
     {
-      "path": "docs/ProjectSlides.pdf",
-      "source_root": "course_archive",
-      "source_path": "ProjectSlides.pdf",
-      "bytes": 2078545,
-      "sha256": "9c110caf93e338e91b379d5d960595814ca8633df3b1418cf4939fc5e3bcd9ee"
-    },
-    {
       "path": "data/raw/Initial.csv",
       "source_root": "course_archive",
       "source_path": "Results_ Cooperation Efficiency/Initial.csv",
