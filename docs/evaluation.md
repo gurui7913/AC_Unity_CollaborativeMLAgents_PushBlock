@@ -22,3 +22,5 @@ Interpretation limits:
 - Repeated field combinations may represent legitimate separate events; they were not deduplicated without event identifiers.
 
 Original [figures](figures) and [training images](media) are unchanged historical artifacts, not revalidated causal comparisons. The current standard-library calculations are 2026 retrospective checks, not Gu Rui's personal 2025 analysis.
+
+README figures added in 2026: [overall](figures/participation_match_overall.png) and [by target team size](figures/participation_match_by_team_size.png). Regenerate with [plot_results.py](../analysis/plot_results.py) after recomputing the CSV summaries. Both use a 0–100% scale and label valid-event denominators; confidence intervals are not inferred from potentially dependent events.

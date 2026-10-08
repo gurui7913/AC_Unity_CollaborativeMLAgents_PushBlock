@@ -42,9 +42,17 @@ Illustrative course-archive clips; these are not controlled comparisons or quant
 |---|---|
 | ![Default-labeled training](docs/media/Default_Training_Outcome.gif) | ![Customized-labeled training](docs/media/Customized_Training_Outcome.gif) |
 
-## What the data supports
+## Team Results & Evaluation
 
-The archived analysis defines a match as `Used == Required`, excluding goal events with `Used == 0`. Retrospective standard-library reanalysis gives:
+These are **team-project evaluation records**; the original post-training analysis was handled by teammates. The figures below were regenerated from the archived CSVs in 2026 and do not extend Gu Rui's individual contribution.
+
+The metric is **participation-match rate**: the fraction of logged goal events where `Used == Required`, after excluding events with `Used == 0`.
+
+### Overall participation matching
+
+![Overall participation-match rates: Initial 59.54%, Mass_Large 62.38%, Mass_Light 62.70%, Mass_Medium 65.89%; valid-event counts are annotated.](docs/figures/participation_match_overall.png)
+
+The four archived configurations have aggregate match rates of 59.54–65.89%. The labels identify archived configurations, not stages of one controlled experiment.
 
 | Archive label | Valid goal events | Matching events | Participation-match rate |
 |---|---:|---:|---:|
@@ -53,7 +61,17 @@ The archived analysis defines a match as `Used == Required`, excluding goal even
 | Mass_Light | 4,976 | 3,120 | 62.70% |
 | Mass_Medium | 4,351 | 2,867 | 65.89% |
 
+### By target team size
+
+![Match rates by target participant count across four configurations: one- and two-agent matching rises from Initial to Mass_Medium, while three-agent matching falls from 83.81% to 64.58%.](docs/figures/participation_match_by_team_size.png)
+
+The aggregate pattern hides a tradeoff: from Initial to Mass_Medium, the one-agent target rate rises from **50.76% to 77.08%**, while the three-agent target rate falls from **83.81% to 64.58%**. Higher aggregate matching therefore does not mean better matching for every block type. Event counts shown on each bar are denominators, not independent training repetitions.
+
 These are descriptive event rates, **not task completion speed, episode success rates or causal reward-design effects**. File labels do not establish a matched baseline or checkpoint-to-evaluation mapping. The records do not substantiate a 40% completion-efficiency improvement. See [evaluation notes](docs/evaluation.md) and [computed summaries](analysis/output/summary.csv).
+
+Mass settings, reward rules and some trainer hyperparameters vary across the archive. No independent-run uncertainty estimate is available. [Exact block-type counts](analysis/output/by_block_type.csv) and [the figure-generation script](analysis/plot_results.py) are included for inspection. Original reward/entropy figures remain linked from the [detailed evaluation notes](docs/evaluation.md), rather than being treated as comparable task-performance scales here.
+
+Vector figures: [overall SVG](docs/figures/participation_match_overall.svg) · [by-team-size SVG](docs/figures/participation_match_by_team_size.svg).
 
 ## Repository layout
 
@@ -68,6 +86,7 @@ data/raw/                     Original goal-event CSVs
 data/derived/                 Original processed CSVs
 analysis/legacy/              Original pandas script
 analysis/recompute_efficiency.py  Portable reanalysis added in 2026
+analysis/plot_results.py       Reproducible README figure generation
 analysis/output/              Recomputed results and validation receipt
 docs/                         Slides, media, method and contribution notes
 environment/                  Version references and external GUID inventory
@@ -86,6 +105,15 @@ python analysis/recompute_efficiency.py
 ```
 
 No third-party packages or GPU are needed. The script reads raw inputs, checks archived derived CSVs, and writes summaries and checksums to `analysis/output`. It does not train agents or modify raw data.
+
+To regenerate the README charts, install the optional plotting dependency in a separate **Python 3.10+** environment:
+
+```bash
+python -m pip install -r analysis/requirements-charts.txt
+python analysis/plot_results.py
+```
+
+Figures are exported as PNG for GitHub display and SVG for reuse; this plotting workflow is separate from the historical Unity trainer environment.
 
 ## Restore Unity
 

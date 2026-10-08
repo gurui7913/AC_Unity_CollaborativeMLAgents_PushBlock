@@ -1,0 +1,2 @@
+# Optional chart renderer; CSV reanalysis needs no third-party packages.
+matplotlib==3.10.7
