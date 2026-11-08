@@ -8,7 +8,7 @@ A curated archive of a **2025 UCL Architectural Computation group project for Di
 
 **Gu Rui's contribution:** cooperation hypotheses, custom reward design, C# contribution tracking, and the later absolute-deviation reward formulation. Subsequent quantitative analysis, environmental tuning and performance comparisons were handled by teammates and are not claimed as Gu Rui's individual contribution. See [contribution boundaries](docs/contributions.md).
 
-**Status:** historical code, scene exports and training artifacts, organized in October 2026. This is **not a standalone Unity project**; no Editor compilation, inference or training was performed during this organization pass. CSV calculations can be rerun with standard Python.
+**Status:** historical code, scene exports and training artifacts, organized in October 2025. This is **not a standalone Unity project**; no Editor compilation, inference or training was performed during this organization pass. CSV calculations can be rerun with standard Python.
 
 ## Research question
 
